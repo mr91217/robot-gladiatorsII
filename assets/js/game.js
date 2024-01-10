@@ -4,15 +4,27 @@ function fight(){
     window.alert("Fight");
 };
 
+
+
 fight();
 var playerName = window.prompt("What is your robot's name?");
 
 console.log("your name is " + playerName);*/
 
-var playerMoney = 10;
+/*var enemyNames = ["Lucas", "Momo", "Lolo"];
+console.log(enemyNames);
+
+for(var i= 0; i < enemyNames.length; i++){
+    console.log(enemyNames[i],i,enemyNames[i] + " is at " + i + " index");
+}
+*/
+
+
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
 var playerAttack = 10;
+var playerMoney = 10;
+
 
 // check to see if the value of the playerHealth variable is greater than 0
 /*if (playerHealth>0){
@@ -22,13 +34,16 @@ var playerAttack = 10;
 console.log("Your name is "+playerName,",","Your HP is "+playerHealth,",",
             "Your Attack is "+playerAttack,".");
 
-var enemyName = "Lucas";
+
+var enemyNames = ["Lucas", "Momo", "Lolo"];
 var enemyHealth = 50;
 var enemyAttack = 2;
 
-console.log("Enemy name is "+enemyName,",","Enemy HP is "+enemyHealth,",",
+console.log("Enemy name is "+enemyNames,",","Enemy HP is "+enemyHealth,",",
             "Enemy Attack is "+enemyAttack,".");
 
+
+         
 var fight = function(){
     
   // Alert players that they are starting the round
@@ -48,15 +63,15 @@ var fight = function(){
 
   // Log a resulting message to the console so we know that it worked.
   console.log(
-    playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
+    playerName + " attacked " + enemyNames[i] + ". " + enemyNames[i] + " now has " + enemyHealth + " health remaining."
   );
 
   // check enemy's health
   if (enemyHealth <= 0){
-    window.alert(enemyName + "has died");
+    window.alert(enemyNames[i] + "has died");
   }
   else {
-    window.alert(enemyName + " still has " + enemyHealth + " health left.");
+    window.alert(enemyNames[i] + " still has " + enemyHealth + " health left.");
   }
 
 
@@ -65,7 +80,7 @@ var fight = function(){
 
   // Log a resulting message to the console so we know that it worked.
   console.log(
-    enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
+    enemyNames[i] + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
   );
 
   // check player's health
@@ -97,4 +112,13 @@ var fight = function(){
 
 };
 
-fight();
+
+
+//for(var i = 0; i < enemyNames.length; i++){
+    //fight(enemyNames[i]);
+
+//}
+
+for(var i = 0; i < enemyNames.length; i++) {
+  fight(enemyNames[i]);
+}
