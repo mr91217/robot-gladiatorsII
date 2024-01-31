@@ -36,7 +36,7 @@ console.log("Your name is "+playerName,",","Your HP is "+playerHealth,",",
 
 
 var enemyNames = ["Lucas", "Momo", "Lolo"];
-//var enemyHealth = 50;
+var enemyHealth = 50;
 var enemyAttack = 2;
 
 //console.log("Enemy name is "+enemyNames,",","Enemy HP is "+enemyHealth,",",
@@ -44,7 +44,7 @@ var enemyAttack = 2;
 
 
          
-var fight = function(enemyname){
+var fight = function(enemyName){
   // repeat and execute as long as the enemy-robot is alive
   while(playerHealth>0 && enemyHealth>0){
 
@@ -87,16 +87,17 @@ var fight = function(enemyname){
 
     // Log a resulting message to the console so we know that it worked.
     console.log(
-        playerName + " attacked " + enemyNames + ". " + enemyNames + " now has " + enemyHealth + " health remaining."
+        playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
     );
 
     // check enemy's health
     if (enemyHealth <= 0){
-        window.alert(enemyNames + " has died");
+        window.alert(enemyName + " has died");
+        playerMoney = playerMoney + 20;
         break;
     }
     else {
-        window.alert(enemyNames + " still has " + enemyHealth + " health left.");
+        window.alert(enemyName + " still has " + enemyHealth + " health left.");
     }
 
 
@@ -105,7 +106,7 @@ var fight = function(enemyname){
 
     // Log a resulting message to the console so we know that it worked.
     console.log(
-        enemyNames + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
+        enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
     );
 
     // check player's health
@@ -117,7 +118,7 @@ var fight = function(enemyname){
     }
   //}
   //else{
-    window.alert("please enter fight or skip")
+    //window.alert("please enter fight or skip")
   //}
 
   }
@@ -133,9 +134,9 @@ var fight = function(enemyname){
 var startGame = function(){
 
     // reset player stats
-    var playerHealth = 100;
-    var playerAttack = 10;
-    var playerMoney = 10;
+    playerHealth = 100;
+    playerAttack = 10;
+    playerMoney = 10;
 
     for(var i = 0; i < enemyNames.length; i++) {
 
