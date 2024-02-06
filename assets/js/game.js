@@ -175,7 +175,7 @@ var fight = function(enemy){
 
         // Log a resulting message to the console so we know that it worked.
         console.log(
-            enemy.name + " now has " + enemy.health + " health remaining." 
+            playerInfo.name + " attacked " + enemy.name + ". " + enemy.name + " now has " + enemy.health + " health remaining." 
         );
 
         // check enemy's health
