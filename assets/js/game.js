@@ -18,6 +18,7 @@ for(var i= 0; i < enemyInfo.length; i++){
     console.log(enemy.names[i],i,enemy.names[i] + " is at " + i + " index");
 }
 */
+var shouldStop = false;
 
 // function to generate a random numeric value,random number 40-60
 var randomNumber = function (min, max) {
@@ -231,6 +232,9 @@ var startGame = function(){
     playerInfo.reset();
 
     for(var i = 0; i < enemyInfo.length; i++) {
+        if(shouldStop){
+            break;
+        }
 
         // let player know what round they are in, remember that arrays start at 0 so it needs to have 1 added to it
         if(playerInfo.health>0){
@@ -306,6 +310,13 @@ var endGame = function(){
     }
     
 };
+
+//Function for exit the game
+var exitGame = function(){
+    alert("Exit");
+    shouldStop = true;
+}
+
 //Function for shop
 var shop = function(){
     // ask player what they'd like to do
@@ -341,7 +352,7 @@ var shop = function(){
             // do nothing, so function will end
             break;
         case 4:
-            endGame();
+            exitGame();
             break;
         default:
             window.alert("You did not pick a valid option. Try again.")
